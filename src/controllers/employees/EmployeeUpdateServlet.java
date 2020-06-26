@@ -79,6 +79,7 @@ public class EmployeeUpdateServlet extends HttpServlet {
                request.setAttribute("errors",errors);
 
                 RequestDispatcher rd = request.getRequestDispatcher("/WEB=INF/views/empolyees/edit.jsp");
+            rd.forward(request,response);
             }else {
                 em.getTransaction().begin();
                 em.getTransaction().commit();

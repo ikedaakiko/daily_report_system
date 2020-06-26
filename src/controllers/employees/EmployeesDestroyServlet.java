@@ -32,7 +32,6 @@ public class EmployeesDestroyServlet extends HttpServlet {
      * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
      */
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // TODO Auto-generated method stub
         String _token = (String)request.getParameter("_token");
         if(_token != null && _token.equals(request.getSession().getId())) {
             EntityManager em = DBUtil.createEntityManager();
@@ -46,10 +45,8 @@ public class EmployeesDestroyServlet extends HttpServlet {
             em.close();
             request.getSession().setAttribute("flush", "削除が完了しました。");
 
-            response.sendRedirect(request.getContextPath() + "employees/index");
+            response.sendRedirect(request.getContextPath() + "/employees/index");
         }
-
-
     }
 
 }

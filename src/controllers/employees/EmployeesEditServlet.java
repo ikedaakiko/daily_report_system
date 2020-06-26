@@ -2,6 +2,7 @@ package controllers.employees;
 
 import java.io.IOException;
 
+import javax.persistence.EntityManager;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -32,7 +33,7 @@ public class EmployeesEditServlet extends HttpServlet {
      */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // TODO Auto-generated method stub
-        javax.persistence.EntityManager em = DBUtil.createEntityManager();
+        EntityManager em = DBUtil.createEntityManager();
         Employee e = em.find(Employee.class, Integer.parseInt(request.getParameter("id")));
 
         em.close();

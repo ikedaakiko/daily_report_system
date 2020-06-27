@@ -19,7 +19,7 @@ body {
 
 h1 {
     front-size: 24px;
-    siplay: inline;
+    diplay: inline;
 }
 
 h2 {
@@ -108,10 +108,5 @@ select {
 }
 
 h1 a {
-    colpor: #eeeeee;
-}
-
-}
-}
-}
+    color: #eeeeee;
 }

@@ -58,9 +58,16 @@ public class LoginFilter implements Filter {
                 }
 
                 //従業員管理の機能は管理者のみが閲覧できるようにする
-                if(servlet_path.matches("/wmployees.*") && e.getAdmin_flag() ==0) {
+                if(servlet_path.matches("/employees.*") && e.getAdmin_flag() ==0) {
                     ((HttpServletResponse)response).sendRedirect(context_path + "/");
              return;
+                }
+            }else{
+                //ログインしてるのにログイン画面を表示させようとした場合は
+                //システムのトップページにリダイレクト
+                if(e != null) {
+                    ((HttpServletResponse)response).sendRedirect(context_path + "/");
+
                 }
             }
         }

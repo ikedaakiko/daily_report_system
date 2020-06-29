@@ -1,5 +1,4 @@
 package models;
-
 import java.sql.Date;
 import java.sql.Timestamp;
 
@@ -18,18 +17,16 @@ import javax.persistence.Table;
 @Table(name = "reports")
 @NamedQueries({
     @NamedQuery(
-             name = "getAllReports",
-             query = "SELECT  r FROM Report As r ORDER BY r.id DESC"),
-@NamedQuery(
-        name = "getPeportsCount",
-        query = "SELECT COUNT(r) FROM Report As r"),
-
-
+            name = "getAllReports",
+            query = "SELECT r FROM Report AS r ORDER BY r.id DESC"
+            ),
+    @NamedQuery(
+            name = "getReportsCount",
+            query = "SELECT COUNT(r) FROM Report AS r"
+            ),
 })
-
 @Entity
 public class Report {
-
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -39,7 +36,7 @@ public class Report {
     @JoinColumn(name = "employee_id", nullable = false)
     private Employee employee;
 
-    @Column(name ="report_date", nullable = false)
+    @Column(name = "report_date", nullable = false)
     private Date report_date;
 
     @Column(name = "title", length = 255, nullable = false)
@@ -52,7 +49,7 @@ public class Report {
     @Column(name = "created_at", nullable = false)
     private Timestamp created_at;
 
-    @Column(name ="updated_at", nullable = false)
+    @Column(name = "updated_at", nullable = false)
     private Timestamp updated_at;
 
     public Integer getId() {

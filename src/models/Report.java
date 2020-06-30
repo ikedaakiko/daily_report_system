@@ -30,7 +30,7 @@ import javax.persistence.Table;
 ),
     @NamedQuery(
             name = "getMyReportsCount",
-            query = "SELECT r FROM Report AS r WHERE r.employee = :employee"
+            query = "SELECT COUNT(r) FROM Report AS r WHERE r.employee = :employee"
 
 )
 })

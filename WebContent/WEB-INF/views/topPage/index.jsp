@@ -43,5 +43,33 @@
             </c:forEach>
         </div>
         <p><a href="<c:url value='/reports/new' />">新規日報の登録</a></p>
+
+        <c:forEach var="worktime" items="${WorkTime}" varStatus="status">
+                    <tr class="row${status.count % 2}">
+                        <td class="worktime_name"><c:out value="${worktime.employee.name}" /></td>
+                         <td class="worktime_date"><fmt:formatDate value='${worktime.worktime_date}' pattern='yyyy-MM-dd' /></td>
+                        <td class="start_work_time"><fmt:formatDate value='${worktime.start_work_time}' pattern='yyyy_MM_dd HH:mm:ss' /></td>
+                    <td class="end_work_time"><fmt:formatDate value="${worktime.end_work_time}" pattern='yyyy_MM_dd HH:mm:ss' /></td>
+                    <td class="rest_time"><fmt:formatDate value="${worktime.rest_time}" pattern='yyyy_MM_dd HH:mm:ss' /></td>
+</tr>
+                </c:forEach>
+            </tbody>
+
+
+        <div id="pagination">
+            （全 ${worktime_count} 件）<br />
+            <c:forEach var="i" begin="1" end="${((worktime_count - 1) / 15) + 1}" step="1">
+                <c:choose>
+                    <c:when test="${i == page}">
+                        <c:out value="${i}" />&nbsp;
+                    </c:when>
+                    <c:otherwise>
+                        <a href="<c:url value='/worktime/index?page=${i}' />"><c:out value="${i}" /></a>&nbsp;
+                    </c:otherwise>
+                </c:choose>
+            </c:forEach>
+        </div>
+        <p><a href="<c:url value='/worktime/new' />">今日の勤怠の登録</a></p>
+
     </c:param>
 </c:import>

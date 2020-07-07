@@ -159,24 +159,3 @@ pre {
 h3 {
     front-size: larger;
     }
-table#worktime_list th {
-    font-weight: bold;
-    padding: 10px 2%;
-}
-table#worktime_list .worktime_name {
-    width: 20%;
-    padding: 10px 2%;
-}
-table#worktime_list .worktime_date {
-    width: 20%;
-}
-
-table#worktime_list .worktime_start_work_time {
-    width: 37%;
-}
-
-table#worktime_list .worktime_end_work_time {
-    width: 13%;
-}
-table#worktime_list .worktime_rest_time {
-    width: 13%;

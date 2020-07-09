@@ -6,7 +6,7 @@
         <c:if test="${flush != null}">
             <div id="flush_success">
                 <c:out value="${flush}"></c:out>
-            </div>
+             </div>
         </c:if>
         <h2>勤怠管理へようこそ</h2>
         <h3>【自分の勤怠 一覧】</h3>
@@ -15,14 +15,12 @@
                 <tr>
                     <th class="report_name">氏名</th>
                     <th class="report_date">日付</th>
-                    <th class="report_time">時間</th>
                     <th class="report_action">操作</th>
                 </tr>
                 <c:forEach var="report" items="${reports}" varStatus="status">
                     <tr class="row${status.count % 2}">
                         <td class="report_name"><c:out value="${report.employee.name}" /></td>
                         <td class="report_date"><fmt:formatDate value='${report.report_date}' pattern='yyyy-MM-dd' /></td>
-                        <td class="report_time">${report.time}</td>
                         <td class="report_action"><a href="<c:url value='/reports/show?id=${report.id}' />">詳細を見る</a></td>
                     </tr>
                 </c:forEach>

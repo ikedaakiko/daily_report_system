@@ -44,18 +44,20 @@ public class ReportsCreateServlet extends HttpServlet {
 
             Report r = new Report();
 
-            r.setEmployee((Employee) request.getSession().getAttribute("login_employee"));
 
+            r.setEmployee((Employee) request.getSession().getAttribute("login_employee"));
             Date report_date = new Date(System.currentTimeMillis());
             String rd_str = request.getParameter("report_date");
             if (rd_str != null && !rd_str.equals("")) {
                 report_date = Date.valueOf(request.getParameter("report_date"));
             }
 
-            r.setReport_date(report_date);
 
+            r.setReport_date(report_date);
             r.setTitle(request.getParameter("title"));
             r.setContent(request.getParameter("content"));
+
+
 
             Timestamp currentTime = new Timestamp(System.currentTimeMillis());
             r.setCreated_at(currentTime);
@@ -81,6 +83,7 @@ public class ReportsCreateServlet extends HttpServlet {
                 response.sendRedirect(request.getContextPath() + "/reports/index");
 
             }
+
         }
     }
 }

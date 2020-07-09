@@ -7,7 +7,7 @@ body {
 
 #header {
     width: 100%;
-    height: 70px;
+    height: 100px;
     background-color: #333333;
 }
 
@@ -19,7 +19,7 @@ body {
 
 h1 {
     front-size: 24px;
-    diplay: inline;
+    displya: inline;
 }
 
 h2 {
@@ -144,6 +144,7 @@ table#report_list .report_name {
 
 table#report_list .report_titel {
     width: 37%;
+
 }
 table#report_list .report_action {
     width: 13%;

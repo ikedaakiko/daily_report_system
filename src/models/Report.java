@@ -14,6 +14,7 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
+
 @Table(name = "reports")
 @NamedQueries({
     @NamedQuery(
@@ -56,13 +57,37 @@ public class Report {
     private String content;
 
     @Column(name = "created_at", nullable = false)
+
     private Timestamp created_at;
 
     @Column(name = "updated_at", nullable = false)
     private Timestamp updated_at;
 
+    @Column(name = "start_time", nullable = false)
+    private String start_time;
+
+    @Column(name = "end_time", nullable = false)
+    private String end_time;
 
 
+
+
+
+    public String getStart_time() {
+        return start_time;
+    }
+
+    public void setStart_time(String start_time) {
+        this.start_time = start_time;
+    }
+
+    public String getEnd_time() {
+        return end_time;
+    }
+
+    public void setEnd_time(String end_time) {
+        this.end_time = end_time;
+    }
 
     public Integer getId() {
         return id;

@@ -20,8 +20,8 @@
                         <a href="<c:url value='/employees/index' />">従業員管理</a>&nbsp;
                          </c:if>
                     <a href="<c:url value='/reports/index' />">日報管理</a>&nbsp;
-                    <a href="<c:url value='/reports/new2' />">勤怠管理</a>&nbsp;
-                    </c:if>
+
+                   </c:if>
             </div>
             <c:if test="${sessionScope.login_employee != null}">
                 <div id="employee_name">
@@ -30,6 +30,7 @@
             </c:if>
         </div>
         <div id="content">${param.content}</div>
+
         <div id="footer">by Akiko Ikeda.</div>
     </div>
 </body>

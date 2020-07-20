@@ -44,7 +44,6 @@ public class ReportsCreateServlet extends HttpServlet {
 
             Report r = new Report();
 
-
             r.setEmployee((Employee) request.getSession().getAttribute("login_employee"));
             Date report_date = new Date(System.currentTimeMillis());
             String rd_str = request.getParameter("report_date");
@@ -52,11 +51,11 @@ public class ReportsCreateServlet extends HttpServlet {
                 report_date = Date.valueOf(request.getParameter("report_date"));
             }
 
-
             r.setReport_date(report_date);
             r.setTitle(request.getParameter("title"));
             r.setContent(request.getParameter("content"));
-
+            r.setStart_time(request.getParameter("start_time"));
+            r.setEnd_time(request.getParameter("end_time"));
 
 
             Timestamp currentTime = new Timestamp(System.currentTimeMillis());
